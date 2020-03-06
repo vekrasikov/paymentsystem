@@ -1,0 +1,807 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample Petstore server.  You can find \nout more about Swagger at \n[http://swagger.io](http://swagger.io) or on \n[irc.freenode.net, #swagger](http://swagger.io/irc/).\n",
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "virtserver.swaggerhub.com",
+  "basePath": "/RevolutionAlexsander/Payment/1.0.0",
+  "schemes": [
+    "https",
+    "http"
+  ],
+
+
+  "paths": {
+    "/registration":{
+      "post": {
+        "tags": [
+          "registration"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "number",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "verification",
+            "in": "formData",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            // "schema": {
+            //   "type": "array",
+            //   "items": {
+            //     "$ref": "#/definitions/Application"
+            //   }
+            // }
+          }
+        }
+      }
+    },
+    "/authorization":{
+      "post": {
+        "tags": [
+          "authorization"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            // "schema": {
+            //   "type": "array",
+            //   "items": {
+            //     "$ref": "#/definitions/Application"
+            //   }
+            // }
+          }
+        }
+      }
+    },
+    "/verification":{
+      "put": {
+        "tags": [
+          "verification"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            // "schema": {
+            //   "type": "array",
+            //   "items": {
+            //     "$ref": "#/definitions/Application"
+            //   }
+            // }
+          }
+        }
+      }
+    },
+    "/accounts/all": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Account"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+    "/applications/": {
+      "get": {
+        "tags": [
+          "applications"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Application"
+              }
+            }
+          },
+          "security" : [ {
+            "api_token" : [ ]
+          } ]
+        }
+      }
+    },
+    "/applications/approval": {
+      "post": {
+        "tags": [
+          "applications"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "status_application_id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Application"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+    "/applications/add": {
+      "get": {
+        "tags": [
+          "applications"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TypeAccount"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      },
+      "post": {
+        "tags": [
+          "applications"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type_account_id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "income",
+            "in": "formData",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "place_job",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Account"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+
+    "/payment/history": {
+      "get": {
+        "tags": [
+          "payment"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/HistoryPayment"
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+    "/payment/add": {
+      "post": {
+        "tags": [
+          "payment"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "summa",
+            "in": "formData",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "recipient_id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "comment",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HistoryPayment"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+
+    "/autopayment/": {
+      "get": {
+        "tags": [
+          "autopayment"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Autopayment"
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+    "/autopayment/add": {
+      "get": {
+        "tags": [
+          "autopayment"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RangeAutoPayment"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      },
+      "post": {
+        "tags": [
+          "autopayment"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "summa",
+            "in": "formData",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "recipient_id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "range_autopayment_id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "comment",
+            "in": "formData",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "frozen",
+            "in": "formData",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Autopayment"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    },
+    "/autopayment/frozen": {
+      "post": {
+        "tags": [
+          "autopayment"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Autopayment"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_token" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "api_token" : {
+      "type" : "api_token",
+      "name" : "api_token",
+      "in" : "header"
+    }
+  },
+  "definitions": {
+    "StatusApplication": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "StatusApplication"
+      }
+    },
+    "TypeAccount": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "TypeAccount"
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "seriesPassport": {
+          "type": "string"
+        },
+        "numberPassport": {
+          "type": "string"
+        },
+        "verification": {
+          "type": "boolean"
+        }  
+      },
+      "xml": {
+        "name": "User"
+      }
+    },
+    "CreditTariff": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "percent": {
+          "type": "number"
+        },
+        "limit": {
+          "type": "number"
+        }
+      },
+      "xml": {
+        "name": "CreditTariff"
+      }
+    },
+    "RangeAutoPayment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "number": {
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "RangeAutoPayment"
+      }
+    },
+    "Application": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "income": {
+          "type": "number"
+        },
+        "place_job": {
+          "type": "string"
+        },
+        "type_account_id": {
+          "$ref": "#/definitions/TypeAccount"
+        },
+        "user_id": {
+          "$ref": "#/definitions/User"
+        },
+        "status_application_id": {
+          "$ref": "#/definitions/StatusApplication"
+        }
+      },
+      "xml": {
+        "name": "Application"
+      }
+    },
+    "Account": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "balance": {
+          "type": "number"
+        },
+        "user_id": {
+          "$ref": "#/definitions/User"
+        },
+        "credit_tariff_id": {
+          "$ref": "#/definitions/CreditTariff"
+        },
+        "date_opening": {
+          "type": "string"
+        },
+        "date_closing": {
+          "type": "string"
+        },
+        "type_account_id": {
+          "$ref": "#/definitions/TypeAccount"
+        },
+        "status_account_id": {
+          "$ref": "#/definitions/StatusAccount"
+        }
+      },
+      "xml": {
+        "name": "Account"
+      }
+    },
+    "StatusAccount": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "StatusAccount"
+      }
+    },
+    "StatusPayment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "StatusPayment"
+      }
+    },
+    "HistoryPayment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "payment_id": {
+          "$ref": "#/definitions/Payment"
+        },
+        "status_payment_id": {
+          "$ref": "#/definitions/StatusPayment"
+        },
+        "date": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "StatusPayment"
+      }
+    },
+    "Payment": {
+      "type": "object",
+      "properties": {
+        "sender_id": {
+          "$ref": "#/definitions/Account" //вопрос
+        },
+        "recipient_id": {
+          "$ref": "#/definitions/Account"
+        },
+        "sum": {
+          "type": "number"
+        },
+        "comment": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Payment"
+      }
+    },
+    "Autopayment": {
+      "type": "object",
+      "properties": {
+        "sender_id": {
+          "$ref": "#/definitions/Account"
+        },
+        "recipient_id": {
+          "$ref": "#/definitions/Account"
+        },
+        "sum": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        },
+        "frozen": {
+          "type": "boolean"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "range_autopayment_id": {
+          "$ref": "#/definitions/RangeAutoPayment"
+        }
+      },
+      "xml": {
+        "name": "Autopayment"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
